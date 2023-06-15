@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld  msg="Olá mundo!" visibilidade="true"/>
-    <NovoComponente texto="Olá novamente"/>
+    <HelloWorld  msg="Olá mundo!"/>
+    <NovoComponente texto="A diretiva v-text permite a apresentação, 
+    tal como ocorre quando usamos diretivas diretas"/>
 
   </div>
 </template>

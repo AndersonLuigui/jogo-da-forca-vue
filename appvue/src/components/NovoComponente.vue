@@ -1,7 +1,7 @@
 <template> <!-- HTML -->
     <div>
-        <h1>{{ texto }}</h1>
-        <p>{{ texto }}</p>
+        <h1>O que é Diretiva v-text? </h1>
+        <p v-text="texto"></p>
     </div>
 </template>
 
