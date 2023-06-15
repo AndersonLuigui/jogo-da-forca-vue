@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div>
-      <span v-if="visibilidade">Olá estou aprendendo Vue.JS</span>
+      <span></span>
     </div>
   </div>
 </template>
