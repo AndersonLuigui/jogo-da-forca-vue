@@ -8,7 +8,6 @@
       button="Próximo" 
       :action="setPalavra"/>
 
-
       <formulario-a v-if="etapa ==='dica'" 
       title="Defina a dica" 
       button="Iniciar jogo"
@@ -16,7 +15,10 @@
     </section>
 
     <section v-if="tela === 'jogo'"  id="jogo" >
-      Jogo
+      <jogo-a 
+      :erros="erros"
+      :palavra="palavra"
+      :dica="dica"/>
     </section>
   
   </div>
@@ -27,6 +29,7 @@
 <script>
 import './css/global.css';
 import FormularioA from './components/FormularioA.vue';
+import JogoA from  './components/JogoA.vue';
 
 
 export default {
@@ -36,11 +39,13 @@ export default {
       tela: 'inicio',
       etapa: 'palavra',
       palavra: '',
-      dica: ''
+      dica:'',
+      erros: 0
     }
   },
   components: {
-    FormularioA 
+    FormularioA,
+    JogoA
   },
   methods:{
     setPalavra: function(palavra){
@@ -55,8 +60,6 @@ export default {
   }
 }
 </script>
-
-
 
 <style>
 #app {

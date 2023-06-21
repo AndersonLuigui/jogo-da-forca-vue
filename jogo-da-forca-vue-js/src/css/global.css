@@ -39,7 +39,7 @@ button:hover {
     opacity: 0.8;
 }
 
-button[disable] {
+button[disabled] {
     opacity: 0.2;
     pointer-events: none;
 }
