@@ -2,9 +2,27 @@
     <div  class="jogo">
       
         <forca-a :erros="erros"/>
+
         <palavra-a 
         :palavra="palavra"
-        :dica="dica"/>
+        :dica="dica"
+        :verificarLetra="verificarLetra"
+        :etapa="etapa"
+        />
+
+        <teclado-a
+        v-if="etapa === 'jogo'"
+        :letras="letras"
+        :verificarLetra="verificarLetra"
+        :jogar="jogar"
+        />
+
+        <final-a
+        v-if="etapa != 'jogo'"
+        :etapa="etapa"
+        :texto="etapa === 'ganhador' ? 'Parabéns :)' : 'Não foi dessa vez'"
+        :jogarNovamente="jogarNovamente"
+        />
 
     </div>
 </template>
@@ -12,13 +30,20 @@
 <script>
 import ForcaA from './ForcaA.vue'
 import PalavraA from './PalavraA.vue'
+import TecladoA from './TecladoA.vue'
+import FinalA from './FinalA.vue'
 
 export default {
     name: 'JogoA',
     props: {
         erros: Number,
         palavra: String,
-        dica: String
+        dica: String,
+        verificarLetra: Function,
+        etapa: String,
+        letras: Array,
+        jogar: Function,
+        jogarNovamente: Function
 
     },
     data(){
@@ -31,7 +56,9 @@ export default {
     },
     components:{
         ForcaA,
-        PalavraA
+        PalavraA,
+        TecladoA,
+        FinalA
 
     }
 
