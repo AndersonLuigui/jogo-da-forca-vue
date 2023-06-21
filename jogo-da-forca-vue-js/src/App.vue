@@ -3,7 +3,16 @@
     <h1>Jogo da Forca Dev Anderson Luigui </h1>
 
     <section v-if="tela === 'inicio'" id="inicio">
-      <Formulario/>
+      <formulario-a v-if="etapa ==='palavra'" 
+      title="Defina a palavra" 
+      button="Próximo" 
+      :action="setPalavra"/>
+
+
+      <formulario-a v-if="etapa ==='dica'" 
+      title="Defina a dica" 
+      button="Iniciar jogo"
+      :action="setDica"/>
     </section>
 
     <section v-if="tela === 'jogo'"  id="jogo" >
@@ -17,17 +26,32 @@
 
 <script>
 import './css/global.css';
-import Formulario from './components/Formulario.vue';
+import FormularioA from './components/FormularioA.vue';
+
 
 export default {
   name: 'App',
   data(){
     return{
-      tela: 'inicio'
+      tela: 'inicio',
+      etapa: 'palavra',
+      palavra: '',
+      dica: ''
     }
   },
   components: {
-    
+    FormularioA 
+  },
+  methods:{
+    setPalavra: function(palavra){
+      this.palavra = palavra;
+      this.etapa = 'dica';
+    },
+    setDica: function(dica){
+      this.dica = dica;
+      this.tela = 'jogo';
+      this.etapa = 'jogo';
+    }
   }
 }
 </script>
