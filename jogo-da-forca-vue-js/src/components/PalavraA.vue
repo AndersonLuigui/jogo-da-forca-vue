@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style>
-    .palavras{
+    .palavra{
         text-transform:uppercase;
         display: flex;
         flex-direction: column;

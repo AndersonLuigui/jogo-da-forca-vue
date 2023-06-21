@@ -46,11 +46,11 @@ export default {
     font-weight: bold;
 }
 
-.final-text.enforcado{
+.final-texto.enforcado{
     color: var(--color-text-error);
 }
 
-.final-text.ganhador{
+.final-texto.ganhador{
     color: var(--color-text-success);
 }
 
